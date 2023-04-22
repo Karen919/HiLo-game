@@ -1,0 +1,78 @@
+.cards {
+    width: 230px;
+    height: 300px;
+    background: url(../img/pngegg.png);
+    background-size: cover;
+    /* background-color: rgba(29, 8, 95, 0.334); */
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card {
+    background-color: antiquewhite;
+    color: black;
+    padding: 7px;
+    border-radius: 14px;
+    width: 150px;
+}
+
+.cards_bottom{
+    text-align: end;
+    font-size: 30px;
+}
+.cards_top{
+    font-size: 30px;
+}
+.center {
+    font-size: xx-large;
+    padding: 20px;
+    text-align: center;
+}
+.xar {
+    background: url(../img/xar.png);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    text-align: end;
+}
+
+.sirt {
+    background: url(../img/pngwing.com\ \(7\).png);
+    background-size: cover;
+    width: 33px;
+    height: 30px;
+    text-align: center;
+    text-align: end;
+
+}
+
+.xach {
+    background: url(../img/xach.png);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    text-align: end;
+
+}
+
+.qyap {
+    background: url(../img/qyap.png);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    text-align: end;
+
+}
+
+.card_content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+}
