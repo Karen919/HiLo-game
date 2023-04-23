@@ -3,7 +3,7 @@ import Start from "./Start";
 import Countdown from "./countdown";
 
 export default function Main() {
-  const [bidDefault, setBidDefault] = useState();
+  const [bidDefault, setBidDefault] = useState(0);
   const [randomName, setRandomName] = useState();
   const [randomMast, setRandomMast] = useState();
   const [rateHi,setRateHi] =useState();
@@ -16,20 +16,23 @@ export default function Main() {
   const percentagesLoArr = percentagesHiArr.slice().reverse();
   const rateHiArr = [ 0, 1.2, 1.33, 1.5, 1.71, 2, 2.5, 3, 4, 6, 12,0];
   const rateLoArr = rateHiArr.slice().reverse();
-
   async function setRandom() {
     setRandomName(Math.floor(Math.random() * 12));
     setRandomMast(Math.floor(Math.random() * 4));
     return Promise.resolve
   }
-  async function cart () {
-    await setRandom()
-      setPercentagesHi(`${percentagesLoArr[cardName.indexOf(document.getElementById('topr').innerText)]}%`);
-      setPercentagesLo(`${percentagesHiArr[cardName.indexOf(document.getElementById('topr').innerText)]}%`);
-      setRateHi(`${rateHiArr[cardName.indexOf(document.getElementById('topr').innerText)]}x`);
-      setRateLo(`${rateLoArr[cardName.indexOf(document.getElementById('topr').innerText)]}x`);
+  async function hiLo () {
+    setPercentagesHi(`${percentagesLoArr[cardName.indexOf(document.getElementById('topr').innerText)]}%`);
+    setPercentagesLo(`${percentagesHiArr[cardName.indexOf(document.getElementById('topr').innerText)]}%`);
+    setRateHi(`${rateHiArr[cardName.indexOf(document.getElementById('topr').innerText)]}x`);
+    setRateLo(`${rateLoArr[cardName.indexOf(document.getElementById('topr').innerText)]}x`);
+    return Promise.resolve
   }
 
+  async function cart () {
+    await setRandom()
+    await hiLo()
+  }
 
   return (
     <div className="main">
@@ -61,7 +64,6 @@ export default function Main() {
           <div className="section_left_intro"><span>A</span><span className="x">x12</span></div>
           <div className="section_left_intro xred"><span>Կարմիր</span><span className="x">x2</span></div>
           <div className="section_left_intro xblack"><span>Սև</span><span className="x">x2</span></div>
-          <div className="section_left_intro xblue"><span>Ջոկեռ</span><span className="x"> x24</span></div>
         </section>
         <section className="cards">
           <div className="card" id="card">
