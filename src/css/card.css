@@ -10,9 +10,52 @@
     align-items: center;
 
 }
+.console_cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.console_card{
+    padding: 19px;
+    margin-left: 6px;
+    background-color: rgba(255, 255, 255, 0.97);
+    border-radius: 10px;
+    font-size: x-large;
+    color: black;
+}
+
+.console_card_gren{
+    clip-path: polygon(0 100%, 51% 0, 100% 100%);
+    width: 60px;
+    height: 50px;
+    margin-left: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    background-color: rgba(38, 229, 0, 0.852);
+    font-size: x-large;
+    color: black;
+}
+.console_card_orange{
+    clip-path: polygon(100% 0, 0 0, 51% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 60px;
+    height: 50px;
+    margin-left: 6px;
+    background-color: rgba(226, 118, 10, 0.852);
+    font-size: x-large;
+    color: black;
+}
+.console_card:nth-child(1) {
+    background-color: rgba(29, 16, 42, 0.882);
+    margin-right: 10px;
+    color: azure;
+}
 
 .card {
-    background-color: antiquewhite;
+    background-color: rgba(250, 235, 215, 0.808);
     color: black;
     padding: 7px;
     border-radius: 14px;
