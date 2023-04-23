@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.538417a2.css",
+    "main.js": "/static/js/main.8dbe8534.js",
+    "static/js/787.3b33d96b.chunk.js": "/static/js/787.3b33d96b.chunk.js",
+    "static/media/bg1.png": "/static/media/bg1.db7815d909f330a89d5e.png",
+    "static/media/bg3.png": "/static/media/bg3.75b7de9574d8ff9c738f.png",
+    "static/media/bg2.png": "/static/media/bg2.56ba50a1905e8a71c043.png",
+    "static/media/carl-raw-o59Gt5O4QZ4-unsplash.jpg": "/static/media/carl-raw-o59Gt5O4QZ4-unsplash.fd71beea6c952a9a4db4.jpg",
+    "static/media/pngegg.png": "/static/media/pngegg.bcafe0c73b510b296e9b.png",
+    "static/media/logo.png": "/static/media/logo.db8840ff42584505319a.png",
+    "static/media/qyap.png": "/static/media/qyap.c029735e15171051a180.png",
+    "static/media/xach.png": "/static/media/xach.a6e716b7062a8de165db.png",
+    "static/media/xar.png": "/static/media/xar.93b81b7a81aa4ebc97d1.png",
+    "static/media/pngwing.com (7).png": "/static/media/pngwing.com (7).2e784625e6631aefba0b.png",
+    "index.html": "/index.html",
+    "main.538417a2.css.map": "/static/css/main.538417a2.css.map",
+    "main.8dbe8534.js.map": "/static/js/main.8dbe8534.js.map",
+    "787.3b33d96b.chunk.js.map": "/static/js/787.3b33d96b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.538417a2.css",
+    "static/js/main.8dbe8534.js"
+  ]
+}
