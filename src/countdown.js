@@ -18,7 +18,7 @@ function Countdown(props) {
     return () => clearInterval(countdown);
   }, [initialCount]);
 
-  return <div>{count}</div>;
+  return (<div>{count}</div>);
 }
 
 export default Countdown;

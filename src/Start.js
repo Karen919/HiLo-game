@@ -15,7 +15,7 @@ export default function Start (props) {
                     <button className="bids_all" onClick={() => props.setBidDefault( props.bidDefault +250)}>+250</button>
                 </div>
             </div>
-            <div className='start_btn'>START</div>
+            <div className='start_btn' onClick={props.fuu}>START</div>
         </div>
         </div>
     )
