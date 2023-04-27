@@ -16,12 +16,13 @@
     align-items: center;
 }
 .console_card{
-    padding: 19px;
+    padding: 15px;
     margin-left: 6px;
     background-color: rgba(255, 255, 255, 0.97);
     border-radius: 10px;
     font-size: x-large;
     color: black;
+    display: none;
 }
 
 .console_card_gren{
@@ -33,9 +34,11 @@
     justify-content: center;
     align-items: end;
     background-color: rgba(38, 229, 0, 0.852);
-    font-size: x-large;
+    font-size: 0px;
     color: black;
+    font-size: x-large;
 }
+
 .console_card_orange{
     clip-path: polygon(100% 0, 0 0, 51% 100%);
     display: flex;
@@ -45,13 +48,15 @@
     height: 50px;
     margin-left: 6px;
     background-color: rgba(226, 118, 10, 0.852);
-    font-size: x-large;
+    font-size: 0px;
     color: black;
+    font-size: x-large;
 }
 .console_card:nth-child(1) {
     background-color: rgba(29, 16, 42, 0.882);
     margin-right: 10px;
     color: azure;
+    display: initial;
 }
 
 .card {

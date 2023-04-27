@@ -1,9 +1,18 @@
+import { useState, useEffect } from "react";
 
+function Header() {
+  const [btn, setBtn] = useState(null);
 
-function Header () {
-    return (
-        <header className="head"></header>
-    )
+  useEffect(() => {
+    setBtn(localStorage.getItem("btn"));
+  }, []);
+
+  return (
+    <header className="header">
+      <div className="head"></div>
+      <div id="header"></div>
+    </header>
+  );
 }
 
 export default Header;
