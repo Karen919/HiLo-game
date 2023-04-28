@@ -1,10 +1,7 @@
 import {useEffect, useState } from "react";
-// import Start from "./Start";
-// import Countdown from "./countdown";
 
-export default function Main() {
+export default function Main(props) {
   const [bidDefault, setBidDefault] = useState(0);
-  localStorage.setItem('bid', bidDefault)
   const [randomName, setRandomName] = useState('0');
   const [randomMast, setRandomMast] = useState('0');
   const [rateHi,setRateHi] =useState('0');
@@ -20,6 +17,8 @@ export default function Main() {
   const [div6,setdiv6] = useState()
   const [div7,setdiv7] = useState()
   const [div8,setdiv8] = useState()
+  const [btn,setBtn] = useState('')  
+  const [count, setCount] = useState(3);
   const cardMast = ['xar', 'xach', 'sirt', 'qyap'];
   const cardName = ['2', '3', '4', '5', '6', '7', '8', '9', 'J', 'Q', 'K', 'A'];
   const percentagesHiArr = [0, 80, 72, 64, 56, 48, 40, 32, 24, 16, 8, 0];
@@ -27,25 +26,25 @@ export default function Main() {
   const rateHiArr = [ 0, 1.2, 1.33, 1.5, 1.71, 2, 2.5, 3, 4, 6, 12,0];
   const rateLoArr = rateHiArr.slice().reverse();
   const buttons = document.querySelectorAll('.onClick');
-  let consoleArr = [];
-  const con = [];
-  const [count, setCount] = useState(3);
-  const initialCount = 3;
+  const header = document.getElementById('header');
+  const finishTopInnerText = [];
+  const finishTopInnerHtml = [];
+  const consoleArr = [];
+  const hi = [];
+  const lo = [];
+  const initialCount = 10;
   localStorage.setItem('x', randomName);
-  const [alertWin,setAlertWin] = useState()
-const [btn,setBtn] = useState('')  
+  localStorage.setItem('bid', bidDefault);
+
   useEffect(() => {
     const countdown = setInterval(() => {
       setCount((prevCount) => {
-       
         if (prevCount === 0) {
           cart()
-
             return initialCount;
         } else {
           return prevCount - 1;
-        };
-        
+        }; 
       });
     }, 1000);
     return () => clearInterval(countdown);
@@ -62,97 +61,22 @@ const [btn,setBtn] = useState('')
       });
     }); 
   
+async function cart () {
   async function setRandom() {
     setRandomMast(Math.floor(Math.random() * 4));
     setRandomName(Math.floor(Math.random() * 12)); 
     return Promise.resolve
   }
-  async function hiLo () {
-    setPercentagesHi(`${percentagesLoArr[cardName.indexOf(document.getElementById('topr').innerText)]}%`);
-    setPercentagesLo(`${percentagesHiArr[cardName.indexOf(document.getElementById('topr').innerText)]}%`);
-    setRateHi(`${rateHiArr[cardName.indexOf(document.getElementById('topr').innerText)]}`);
-    setRateLo(`${rateLoArr[cardName.indexOf(document.getElementById('topr').innerText)]}`);
-    return Promise.resolve
-  }
-  async function consCards() {
-    // d.push(document.getElementById('topr').innerHTML)
-    // const d = d.reverse().slice(0,d.length/2)
-    // setdiv(<span className="console_card">{d[0]}</span>)
-    // setdiv1((cardName.indexOf(d[0]) < cardName.indexOf(d[1])) ? <span className="console_card_orange">{d[1]}</span> :
-    //       (cardName.indexOf(d[0]) === cardName.indexOf(d[1])) ? <span className="console_card">{d[1]}</span> :
-    //       <span className="console_card_gren">{d[1]}</span>);
-    // setdiv2((cardName.indexOf(d[1]) < cardName.indexOf(d[2])) ? <span className="console_card_orange">{d[2]}</span> :
-    //       (cardName.indexOf(d[1]) === cardName.indexOf(d[2])) ? <span className="console_card">{d[2]}</span> :
-    //       <span className="console_card_gren">{d[2]}</span>);
-    // setdiv3((cardName.indexOf(d[2]) < cardName.indexOf(d[3])) ? <span className="console_card_orange">{d[3]}</span> :
-    //       (cardName.indexOf(d[2]) === cardName.indexOf(d[3])) ? <span className="console_card">{d[3]}</span> :
-    //       <span className="console_card_gren">{d[3]}</span>);
-    // setdiv4((cardName.indexOf(d[3]) < cardName.indexOf(d[4])) ? <span className="console_card_orange">{d[4]}</span> :
-    //       (cardName.indexOf(d[3]) === cardName.indexOf(d[4])) ? <span className="console_card">{d[4]}</span> :
-    //       <span className="console_card_gren">{d[4]}</span>);
-    // setdiv5((cardName.indexOf(d[4]) < cardName.indexOf(d[5])) ? <span className="console_card_orange">{d[5]}</span> :
-    //       (cardName.indexOf(d[4]) === cardName.indexOf(d[5])) ? <span className="console_card">{d[5]}</span> :
-    //       <span className="console_card_gren">{d[5]}</span>);
-    // setdiv6((cardName.indexOf(d[5]) < cardName.indexOf(d[6])) ? <span className="console_card_orange">{d[6]}</span> :
-    //       (cardName.indexOf(d[5]) === cardName.indexOf(d[6])) ? <span className="console_card">{d[6]}</span> :
-    //       <span className="console_card_gren">{d[6]}</span>);
-    // setdiv7((cardName.indexOf(d[6]) < cardName.indexOf(d[7])) ? <span className="console_card_orange">{d[7]}</span> :
-    //       (cardName.indexOf(d[6]) === cardName.indexOf(d[7])) ? <span className="console_card">{d[7]}</span> :
-    //       <span className="console_card_gren">{d[7]}</span>);
-    // setdiv8((cardName.indexOf(d[7]) < cardName.indexOf(d[8])) ? <span className="console_card_orange">{d[8]}</span> :
-    //       (cardName.indexOf(d[7]) === cardName.indexOf(d[8])) ? <span className="console_card">{d[8]}</span> :
-    //       <span className="console_card_gren">{d[8]}</span>);
-    return Promise.resolve
-  }
-  async function fuu () {
 
-    document.getElementById('header').innerText = localStorage.getItem('btn');
-    document.getElementById('header').style.opacity = '1'
-    // alert(Number(localStorage.getItem('btn')* Number(localStorage.getItem('x'))))
-    // alert(localStorage.getItem('x'))
-    return Promise.resolve
-}
-  async function fu () {
-    // localStorage.removeItem('btn');
-    document.getElementById('header').style.opacity = '0';
-   
-    return Promise.resolve
-  }
+  async function hilo() {
+    const topInnerText = document.getElementById('topr').innerText;
+    const header = document.getElementById('header');
 
-  async function cart () {
-    await setRandom()
-    await hiLo()
-    await consCards();
-    await fuu()
-    await fu()
-    fi()
-  }
+    setPercentagesHi(`${percentagesLoArr[cardName.indexOf(topInnerText)]}%`);
+    setPercentagesLo(`${percentagesHiArr[cardName.indexOf(topInnerText)]}%`);
+    setRateHi(`${rateHiArr[cardName.indexOf(topInnerText)]}`);
+    setRateLo(`${rateLoArr[cardName.indexOf(topInnerText)]}`);
 
-
-useEffect(()=>{
-  con.push(document.getElementById('topr').innerHTML)
-  if( Number(btn) === ( randomName +2) ) {
-    alert(bidDefault *12)
-  }else if (Number(btn) ===14 && randomName<=7){
-    alert(bidDefault *1.5)
-  }else if(Number(btn) ===15 && Number(randomName) > 7  ){
-    alert(bidDefault *3)
-  }else if(Number(btn) ===16 && (Number(randomName) ===10 || Number(randomName) ===11 ) ){
-    alert(bidDefault *6)
-  }else if(Number(btn) ===17 && Number(randomName) ===11){
-    alert(bidDefault *12)
-  }else if(Number(btn) ===18 && Number(randomMast) >1){
-    alert(bidDefault *2)
-  }else if(Number(btn) ===19 && Number(randomMast) <=1){
-    alert(bidDefault *2)
-  }else {
-  }
-},[randomName])
-
-let d = [];
-let v = [];
-let lo = [];
-function fi() {
   consoleArr.unshift(document.getElementById('topr').innerHTML)
   setdiv(<span className="console_card">{consoleArr[0]}</span>)
   setdiv1((cardName.indexOf(consoleArr[0]) < cardName.indexOf(consoleArr[1])) ? <span className="console_card_orange">{consoleArr[1]}</span> :
@@ -180,45 +104,66 @@ function fi() {
         (cardName.indexOf(consoleArr[7]) === cardName.indexOf(consoleArr[8])) ? <span className="console_card">{consoleArr[8]}</span> :
         <span className="console_card_gren">{consoleArr[8]}</span>);
 
-        d= consoleArr.slice();
-        if (d[2]==='J') {
-          d[2] = 10;
-        }else if (d[2]==='Q'){
-          d[2] = 11;
-        }else if (d[2]==='K'){
-          d[2] = 12;
-        }else if (d[2]==='A'){
-          d[2] = 13;
+        finishTopInnerText.unshift(topInnerText)
+        if (finishTopInnerText.length>3) { finishTopInnerText.pop()};
+        if (finishTopInnerText[0]==='J') {
+          finishTopInnerText[0] = '10';
+        }else if (finishTopInnerText[0]==='Q'){
+          finishTopInnerText[0] = '11';
+        }else if (finishTopInnerText[0]==='K'){
+          finishTopInnerText[0] = '12';
+        }else if (finishTopInnerText[0]==='A'){
+          finishTopInnerText[0] = '13';
         }
-        if (d[0]==='J') {
-          d[0] = 10;
-        }else if (d[0]==='Q'){
-          d[0] = 11;
-        }else if (d[0]==='K'){
-          d[0] = 12;
-        }else if (d[0]==='A'){
-          d[0] = 13;
+        hi.unshift(rateHiArr[cardName.indexOf(topInnerText)]);
+        if (hi.length>3) { hi.pop()};
+        lo.unshift(rateLoArr[cardName.indexOf(topInnerText)]);
+        if (lo.length>3){lo.pop()};
+    
+        if (Number(localStorage.getItem('btn')) === 21 && Number(finishTopInnerText[1]) > Number(finishTopInnerText[0])) {
+          header.classList.add('consolebid1');
+          header.innerText = `Դուք հախթեցիք ${Number(localStorage.getItem('bid')) * Number(lo[1])} fun`;
+        } else if (Number(localStorage.getItem('btn')) === 20 && Number(finishTopInnerText[1]) < Number(finishTopInnerText[0])) {
+          header.classList.add('consolebid1');
+          header.innerText = `Դուք հախթեցիք ${Number(localStorage.getItem('bid')) * Number(hi[1])} fun`;
         }
-     v.unshift(rateHiArr[cardName.indexOf(document.getElementById('topr').innerText)])
-     if (v.length>3) {
-      v.pop()
-     }
-     lo.unshift(rateLoArr[cardName.indexOf(document.getElementById('topr').innerText)]);
-     if (lo.length>3) {
-      lo.pop()
-     }
-        if (Number(localStorage.getItem('btn'))==21 && Number(d[2]) >Number( d[0]) ){
-          document.getElementById('footer').innerHTML = Number(localStorage.getItem('bid')) * Number(lo[1]) 
-          //  alert(Number(localStorage.getItem('bid')) * Number(lo[1]) , )        
-        }else if(Number(localStorage.getItem('btn'))==20 && Number(d[2]) <Number( d[0]) ){
-          document.getElementById('footer').innerHTML = Number(localStorage.getItem('bid')) * Number(v[1])
-                    // alert(Number(localStorage.getItem('bid')) * Number(v[1]), )
-
-
-        }
-        console.log(Number(btn)); 
-
+        setTimeout(() => {
+          header.classList.remove('consolebid1');
+          header.innerText = 'Կատարեք խաղադրույք';
+        }, 3000);
+    console.log(finishTopInnerText);
+    console.log(hi);
+    console.log(lo);
+    return Promise.resolve
+  }
+  await setRandom()
+  await hilo()
 }
+
+  function alertWin(rate) {
+    header.classList.add('consolebid1');
+    header.innerText = 'Դուք հախթեցիք ' + bidDefault * rate + ' fun' ;
+  }
+  useEffect(()=>{
+    finishTopInnerHtml.push(document.getElementById('topr').innerHTML)
+    if( Number(btn) === ( randomName +2) ) {
+      alertWin(12)
+    }else if (Number(btn) ===14 && randomName<=7){
+      alertWin(1.5)
+    }else if(Number(btn) ===15 && Number(randomName) > 7  ){
+      alertWin(3)
+    }else if(Number(btn) ===16 && (Number(randomName) ===10 || Number(randomName) ===11 ) ){
+      alertWin(6)
+    }else if(Number(btn) ===17 && Number(randomName) ===11){
+      alertWin(12)
+    }else if(Number(btn) ===18 && Number(randomMast) >1){
+      alertWin(2)
+    }else if(Number(btn) ===19 && Number(randomMast) <=1){
+      alertWin(2)
+    }else {
+    }
+  
+  },[randomName])
 
   return (
     <div className="main">
@@ -308,8 +253,9 @@ function fi() {
                     <button className="bids_all" onClick={() => setBidDefault( bidDefault +250)}>+250</button>
                 </div>
             </div>
-            <div className='start_btn' onClick={fuu}>START</div>
+            <div className='start_btn' >START</div>
         </div>
         </div>  </div>
+
   );
 }

@@ -1,16 +1,11 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 
-function Header() {
-  const [btn, setBtn] = useState(null);
-
-  useEffect(() => {
-    setBtn(localStorage.getItem("btn"));
-  }, []);
-
+function Header(props) {
+    
   return (
     <header className="header">
       <div className="head"></div>
-      <div id="header"></div>
+      <div id="header" className="consolebid">Կատարեք խաղադրույք</div>
     </header>
   );
 }
