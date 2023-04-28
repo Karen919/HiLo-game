@@ -131,9 +131,7 @@ async function cart () {
           header.classList.remove('consolebid1');
           header.innerText = 'Կատարեք խաղադրույք';
         }, 3000);
-    console.log(finishTopInnerText);
-    console.log(hi);
-    console.log(lo);
+        setTimeout(()=> setBidDefault(0),100)
     return Promise.resolve
   }
   await setRandom()
@@ -163,7 +161,7 @@ async function cart () {
     }else {
     }
   
-  },[randomName])
+  },[randomName]);
 
   return (
     <div className="main">
@@ -253,7 +251,6 @@ async function cart () {
                     <button className="bids_all" onClick={() => setBidDefault( bidDefault +250)}>+250</button>
                 </div>
             </div>
-            <div className='start_btn' >START</div>
         </div>
         </div>  </div>
 

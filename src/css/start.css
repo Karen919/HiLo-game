@@ -1,6 +1,7 @@
 .startConteiner {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
     padding: 1px;
     width: 630px;
@@ -14,7 +15,6 @@
     padding: 3px;
 
 }
-
 
 .bid_plus_minus  {
     background-color: rgba(30, 30, 31, 0.788);
